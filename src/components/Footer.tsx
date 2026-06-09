@@ -40,7 +40,7 @@ export default function Footer() {
               </div>
               <span className="text-xl font-bold text-white">
                 Cookie<span className="text-primary-400">Soft</span>{' '}
-                <span className="text-sm font-medium text-dark-300">Technologies</span>
+                <span className="text-md font-medium text-dark-500">Technologies</span>
               </span>
             </div>
             <p className="mt-4 text-dark-300 text-sm leading-relaxed max-w-xs">
