@@ -37,7 +37,7 @@ export default function Navbar() {
             </div>
             <span
               className={`text-xl font-bold transition-colors ${
-                scrolled ? 'text-dark-900' : 'text-dark-900'
+                scrolled ? 'text-dark-900' : 'text-dark-100'
               }`}
             >
               Cookie<span className="text-primary-600">Soft</span>
