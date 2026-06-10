@@ -23,11 +23,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-dark-100'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
@@ -35,13 +34,21 @@ export default function Navbar() {
             <div className="w-9 h-9 rounded-lg bg-primary-600 flex items-center justify-center group-hover:bg-primary-700 transition-colors">
               <span className="text-white font-bold text-sm">CST</span>
             </div>
-            <span
+            {/* <span
               className={`text-xl font-bold transition-colors ${
                 scrolled ? 'text-dark-900' : 'text-dark-100'
               }`}
             >
               Cookie<span className="text-primary-600">Soft</span>
-            </span>
+            </span> */}
+            <div className="flex flex-col items-center text-center leading-tight">
+              <span className={`logo-text ${scrolled ? 'scrolled' : ''}`}>
+                Cookiesoft
+              </span>
+              <span className={`tagline-text ${scrolled ? 'scrolled' : ''}`}>
+                Building the Future with AI
+              </span>
+            </div>
           </a>
 
           <div className="hidden lg:flex items-center gap-8">
@@ -49,9 +56,8 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-primary-600 ${
-                  scrolled ? 'text-dark-500' : 'text-dark-400'
-                }`}
+                className={`text-sm font-medium transition-colors hover:text-primary-600 ${scrolled ? 'text-dark-500' : 'text-dark-400'
+                  }`}
               >
                 {link.label}
               </a>
