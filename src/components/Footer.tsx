@@ -1,5 +1,6 @@
 import { Mail, ExternalLink, Rss } from 'lucide-react'
 
+const startYear = 2018
 const footerLinks = {
   Services: [
     { label: 'Web Development', href: '#services' },
@@ -25,7 +26,7 @@ const socialLinks = [
   { icon: ExternalLink, href: '#', label: 'GitHub' },
   { icon: Rss, href: '#', label: 'Twitter' },
   { icon: ExternalLink, href: '#', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:hello@cookiesoft.in', label: 'Email' },
+  { icon: Mail, href: 'mailto:myindialogin@gmail.com', label: 'Email' },
 ]
 
 export default function Footer() {
@@ -38,10 +39,18 @@ export default function Footer() {
               <div className="w-9 h-9 rounded-lg bg-primary-600 flex items-center justify-center">
                 <span className="text-white font-bold text-sm">CST</span>
               </div>
-              <span className="text-xl font-bold text-white">
+              {/* <span className="text-xl font-bold text-white">
                 Cookie<span className="text-primary-400">Soft</span>{' '}
                 <span className="text-md font-medium text-dark-500">Technologies</span>
+              </span> */}
+              <div className="flex flex-col items-center text-center leading-tight">
+              <span className={`footerLogo-text`}>
+                Cookiesoft
               </span>
+              <span className={`tagline-text`}>
+                Building the Future with AI
+              </span>
+            </div>
             </div>
             <p className="mt-4 text-dark-300 text-sm leading-relaxed max-w-xs">
               AI-Powered Software for the Modern World. Building custom
@@ -85,10 +94,17 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-dark-700 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-dark-400">
-            &copy; {new Date().getFullYear()} CookieSoft. All rights reserved.
+            &copy; {startYear} - {new Date().getFullYear()} CookieSoft. All rights reserved.
           </p>
           <p className="text-sm text-dark-500">
-            cookiesoft.in
+            <a
+              href="https://www.cookiesoft.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-dark-500 hover:text-primary-400 underline-offset-2 hover:underline transition"
+            >
+              www.cookiesoft.in
+            </a>
           </p>
         </div>
       </div>
