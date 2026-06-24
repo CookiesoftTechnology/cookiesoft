@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Sparkles, Code2, Cpu } from 'lucide-react'
+import { HiArrowRight, HiSparkles, HiCodeBracketSquare, HiCpuChip } from 'react-icons/hi2'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-dark-900">
+    <section id="top" className="relative min-h-screen flex items-center overflow-hidden bg-dark-900">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-primary-950/80 via-dark-900 to-accent-900/40" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl" />
@@ -20,7 +20,7 @@ export default function Hero() {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600/15 border border-primary-500/25 rounded-full text-primary-300 text-sm font-medium mb-6"
             >
-              <Sparkles className="w-4 h-4" />
+              <HiSparkles className="w-4 h-4" />
               AI-Powered Software Company
             </motion.div>
 
@@ -58,7 +58,7 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 px-6 py-3.5 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-all hover:shadow-lg hover:shadow-primary-600/25 group"
               >
                 Start a Project
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="#services"
@@ -133,10 +133,10 @@ export default function Hero() {
                 </div>
                 <div className="flex gap-3 pt-2">
                   <div className="flex items-center gap-2 px-3 py-2 bg-primary-600/15 border border-primary-500/25 rounded-lg text-primary-300 text-xs font-medium">
-                    <Cpu className="w-3.5 h-3.5" /> AI Powered
+                    <HiCpuChip className="w-3.5 h-3.5" /> AI Powered
                   </div>
                   <div className="flex items-center gap-2 px-3 py-2 bg-accent-600/15 border border-accent-500/25 rounded-lg text-accent-300 text-xs font-medium">
-                    <Code2 className="w-3.5 h-3.5" /> Dev Tools
+                    <HiCodeBracketSquare className="w-3.5 h-3.5" /> Dev Tools
                   </div>
                 </div>
               </div>

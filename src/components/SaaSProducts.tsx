@@ -1,40 +1,40 @@
 import { motion } from 'framer-motion'
-import { BarChart3, Users, ShoppingCart, GraduationCap, Receipt, Target } from 'lucide-react'
+import { HiChartBar, HiUsers, HiShoppingCart, HiAcademicCap, HiReceiptPercent, HiArrowTrendingUp } from 'react-icons/hi2'
 import { useInView } from '../hooks/useInView'
 
 const products = [
   {
-    icon: BarChart3,
+    icon: HiChartBar,
     title: 'Analytics Platform',
     description: 'Real-time business intelligence dashboards with AI-powered insights and predictions.',
     tag: 'Available Now',
   },
   {
-    icon: Users,
+    icon: HiUsers,
     title: 'CRM Pro',
     description: 'AI-enhanced customer relationship management with smart segmentation and outreach.',
     tag: 'Beta',
   },
   {
-    icon: Receipt,
+    icon: HiReceiptPercent,
     title: 'Smart Billing',
     description: 'Automated invoicing, subscription management, and financial reporting in one platform.',
     tag: 'Coming Soon',
   },
   {
-    icon: GraduationCap,
+    icon: HiAcademicCap,
     title: 'EduManage',
     description: 'Complete school and college ERP with student tracking, grading, and parent portals.',
     tag: 'Coming Soon',
   },
   {
-    icon: ShoppingCart,
+    icon: HiShoppingCart,
     title: 'Commerce Suite',
     description: 'Full-stack e-commerce platform with inventory, payments, and AI-driven recommendations.',
     tag: 'Beta',
   },
   {
-    icon: Target,
+    icon: HiArrowTrendingUp,
     title: 'Marketing AI',
     description: 'Automated campaign management, A/B testing, and ROI optimization with machine learning.',
     tag: 'Coming Soon',

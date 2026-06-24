@@ -1,35 +1,36 @@
 import { motion } from 'framer-motion'
-import { Bot, Brain, MessageSquare, Eye, Mic, FileText } from 'lucide-react'
+import { FaBrain, FaRobot } from 'react-icons/fa'
+import { HiChatBubbleBottomCenterText, HiEye, HiMicrophone, HiDocumentText } from 'react-icons/hi2'
 import { useInView } from '../hooks/useInView'
 
 const aiServices = [
   {
-    icon: Bot,
+    icon: FaRobot,
     title: 'AI Agents',
     description: 'Autonomous AI agents that execute complex tasks, make decisions, and learn from interactions.',
   },
   {
-    icon: MessageSquare,
+    icon: HiChatBubbleBottomCenterText,
     title: 'AI Chatbots',
     description: 'Conversational AI with natural language understanding for customer support and engagement.',
   },
   {
-    icon: Brain,
+    icon: FaBrain,
     title: 'RAG Systems',
     description: 'Retrieval-Augmented Generation pipelines that ground AI responses in your business data.',
   },
   {
-    icon: FileText,
+    icon: HiDocumentText,
     title: 'LLM Applications',
     description: 'Custom large language model integrations for content generation, analysis, and reasoning.',
   },
   {
-    icon: Eye,
+    icon: HiEye,
     title: 'Computer Vision',
     description: 'Image recognition, object detection, and visual inspection powered by deep learning.',
   },
   {
-    icon: Mic,
+    icon: HiMicrophone,
     title: 'Voice AI',
     description: 'Speech-to-text, text-to-speech, and voice assistant solutions for hands-free interaction.',
   },
@@ -87,7 +88,7 @@ export default function AIDivision() {
           className="mt-12 text-center"
         >
           <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-600/15 border border-primary-500/30 rounded-full text-primary-300 text-sm font-medium">
-            <Brain className="w-4 h-4" />
+            <FaBrain className="w-4 h-4" />
             Powered by GPT-4, Claude, Llama &amp; custom models
           </div>
         </motion.div>
