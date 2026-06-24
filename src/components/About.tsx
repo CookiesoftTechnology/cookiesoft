@@ -1,25 +1,25 @@
 import { motion } from 'framer-motion'
-import { Rocket, Lightbulb, Users, Globe } from 'lucide-react'
+import { HiRocketLaunch, HiLightBulb, HiUsers, HiGlobeAlt } from 'react-icons/hi2'
 import { useInView } from '../hooks/useInView'
 
 const values = [
   {
-    icon: Rocket,
+    icon: HiRocketLaunch,
     title: 'Ship Fast',
     description: 'We prioritize speed without sacrificing quality. MVP to production in weeks, not months.',
   },
   {
-    icon: Lightbulb,
+    icon: HiLightBulb,
     title: 'AI-First Thinking',
     description: 'Every product and solution we build considers how AI can make it smarter and more efficient.',
   },
   {
-    icon: Users,
+    icon: HiUsers,
     title: 'Client Partnership',
     description: 'We work alongside your team as true partners, not just vendors. Your success is our metric.',
   },
   {
-    icon: Globe,
+    icon: HiGlobeAlt,
     title: 'Global Scale',
     description: 'Built for businesses serving local markets or going global. Our architecture scales with you.',
   },

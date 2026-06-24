@@ -1,35 +1,35 @@
 import { motion } from 'framer-motion'
-import { Code2, Package, GitBranch, TestTube, Activity, Terminal } from 'lucide-react'
+import { HiCodeBracketSquare, HiArchiveBox, HiArrowPath, HiBeaker, HiChartBar, HiCommandLine } from 'react-icons/hi2'
 import { useInView } from '../hooks/useInView'
 
 const tools = [
   {
-    icon: Code2,
+    icon: HiCodeBracketSquare,
     title: 'APIs & SDKs',
     description: 'RESTful and GraphQL APIs with client SDKs in JavaScript, Python, and Go.',
   },
   {
-    icon: Package,
+    icon: HiArchiveBox,
     title: 'Open Source',
     description: 'Community-driven libraries and frameworks on GitHub with active maintenance.',
   },
   {
-    icon: GitBranch,
+    icon: HiArrowPath,
     title: 'CI/CD Utilities',
     description: 'Automated build, test, and deployment pipelines for rapid iteration.',
   },
   {
-    icon: TestTube,
+    icon: HiBeaker,
     title: 'Testing Tools',
     description: 'Automated testing frameworks for unit, integration, and E2E coverage.',
   },
   {
-    icon: Activity,
+    icon: HiChartBar,
     title: 'Monitoring',
     description: 'Real-time observability, logging, and alerting for production systems.',
   },
   {
-    icon: Terminal,
+    icon: HiCommandLine,
     title: 'Developer Platform',
     description: 'CLI tools, documentation generators, and developer experience utilities.',
   },
@@ -86,7 +86,7 @@ export default function DevTools() {
           className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <div className="font-mono text-sm text-dark-400 bg-dark-700/50 px-5 py-3 rounded-lg border border-dark-600/50 flex items-center gap-2">
-            <Terminal className="w-4 h-4 text-accent-400" />
+            <HiCommandLine className="w-4 h-4 text-accent-400" />
             npx create-cookiesoft-app my-project
           </div>
         </motion.div>

@@ -1,39 +1,6 @@
 import { motion } from 'framer-motion'
-import { Globe, Smartphone, Cloud, Server, Shield, Workflow } from 'lucide-react'
 import { useInView } from '../hooks/useInView'
-
-const services = [
-  {
-    icon: Globe,
-    title: 'Web Applications',
-    description: 'Modern, responsive web apps built with React, Next.js, and cutting-edge frameworks.',
-  },
-  {
-    icon: Smartphone,
-    title: 'Mobile Development',
-    description: 'Cross-platform mobile apps with React Native and Flutter for iOS and Android.',
-  },
-  {
-    icon: Cloud,
-    title: 'Cloud Solutions',
-    description: 'Scalable cloud infrastructure on AWS, GCP, and Azure with DevOps automation.',
-  },
-  {
-    icon: Server,
-    title: 'Enterprise Software',
-    description: 'Custom CRM, ERP, and business systems tailored to your operational needs.',
-  },
-  {
-    icon: Shield,
-    title: 'Cybersecurity',
-    description: 'Security audits, compliance tools, and privacy management platforms.',
-  },
-  {
-    icon: Workflow,
-    title: 'Process Automation',
-    description: 'Intelligent workflow automation that eliminates repetitive tasks and boosts efficiency.',
-  },
-]
+import { serviceItems } from '../data/siteContent'
 
 export default function Services() {
   const { ref, isVisible } = useInView(0.1)
@@ -54,7 +21,7 @@ export default function Services() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, i) => (
+          {serviceItems.map((service, i) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 30 }}

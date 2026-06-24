@@ -1,33 +1,23 @@
-import { Mail, ExternalLink, Rss } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import type { ReactNode } from 'react'
+import { footerLinks, footerSocialLinks, footerCopyright } from '../data/siteContent'
 
-const startYear = 2018
-const footerLinks = {
-  Services: [
-    { label: 'Web Development', href: '#services' },
-    { label: 'Mobile Apps', href: '#services' },
-    { label: 'Cloud Solutions', href: '#services' },
-    { label: 'Enterprise Software', href: '#services' },
-  ],
-  Products: [
-    { label: 'Analytics Platform', href: '#saas' },
-    { label: 'CRM Pro', href: '#saas' },
-    { label: 'Smart Billing', href: '#saas' },
-    { label: 'EduManage', href: '#saas' },
-  ],
-  Company: [
-    { label: 'About', href: '#about' },
-    { label: 'AI Division', href: '#ai' },
-    { label: 'Developer Tools', href: '#devtools' },
-    { label: 'Contact', href: '#contact' },
-  ],
+const iconColorClass = (label: string) => {
+  switch (label) {
+    case 'Facebook':
+      return 'text-[#1877F2]'
+    case 'X':
+      return 'text-[#1DA1F2]'
+    case 'Instagram':
+      return 'text-[#E4405F]'
+    case 'LinkedIn':
+      return 'text-[#0A66C2]'
+    case 'YouTube':
+      return 'text-[#FF0000]'
+    default:
+      return 'text-dark-300'
+  }
 }
-
-const socialLinks = [
-  { icon: ExternalLink, href: '#', label: 'GitHub' },
-  { icon: Rss, href: '#', label: 'Twitter' },
-  { icon: ExternalLink, href: '#', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:myindialogin@gmail.com', label: 'Email' },
-]
 
 export default function Footer() {
   return (
@@ -58,35 +48,56 @@ export default function Footer() {
               worldwide.
             </p>
             <div className="mt-6 flex gap-3">
-              {socialLinks.map((social) => (
+              {footerSocialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-lg bg-dark-700 hover:bg-primary-600/20 flex items-center justify-center transition-colors group"
                   aria-label={social.label}
                 >
-                  <social.icon className="w-4 h-4 text-dark-300 group-hover:text-primary-400 transition-colors" />
+                  <social.icon className={`w-4 h-4 ${iconColorClass(social.label)} transition-colors`} />
                 </a>
               ))}
             </div>
           </div>
 
-          {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title}>
+          {footerLinks.map((group) => (
+            <div key={group.title}>
               <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
-                {title}
+                {group.title}
               </h3>
               <ul className="mt-4 space-y-2.5">
-                {links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-dark-400 hover:text-primary-400 transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
+                {group.links.map((link) => {
+                  const isTo = 'to' in link
+                  const isHash = isTo && typeof link.to === 'string' && link.to.includes('#')
+                  let element: ReactNode
+
+                  if (isTo) {
+                    if (isHash) {
+                      element = (
+                        <a href={link.to} className="text-sm text-dark-400 hover:text-primary-400 transition-colors">
+                          {link.label}
+                        </a>
+                      )
+                    } else {
+                      element = (
+                        <Link to={link.to} className="text-sm text-dark-400 hover:text-primary-400 transition-colors">
+                          {link.label}
+                        </Link>
+                      )
+                    }
+                  } else {
+                    element = (
+                      <a href={link.href} className="text-sm text-dark-400 hover:text-primary-400 transition-colors">
+                        {link.label}
+                      </a>
+                    )
+                  }
+
+                  return <li key={link.label}>{element}</li>
+                })}
               </ul>
             </div>
           ))}
@@ -94,16 +105,16 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-dark-700 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-dark-400">
-            &copy; {startYear} - {new Date().getFullYear()} CookieSoft. All rights reserved.
+            &copy; {footerCopyright.startYear} - {new Date().getFullYear()} {footerCopyright.company}. All rights reserved.
           </p>
           <p className="text-sm text-dark-500">
             <a
-              href="https://www.cookiesoft.in"
+              href={footerCopyright.website}
               target="_blank"
               rel="noopener noreferrer"
               className="text-dark-500 hover:text-primary-400 underline-offset-2 hover:underline transition"
             >
-              www.cookiesoft.in
+              {new URL(footerCopyright.website).hostname}
             </a>
           </p>
         </div>
